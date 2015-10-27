@@ -10,40 +10,32 @@
   </div>
   <script>
   function questionFunction() {
-
-    var num_correct = 0;
-
-    var question1 = prompt("Do I have a dog?")
-
-    if (question1.toLowerCase() === "yes") {
-      alert("Correct, I have a dog her name is Ceres.")
-      num_correct += 1
+    var question;
+    question = ["Do I have a dog?", "Did I grow up in Oregon?", "Do I like to play music?"];
+    var answer;
+    answer = ["yes", "no"];
+    prompt(question[0])
+    if (question[0] === answer[0]) {
+      alert("Correct, I have a dog her and name is Ceres.")
     }
     else {
       alert("Incorrect, I have a dog her name is Ceres. She is now offended.")
     }
-
-    var question2 = prompt("Did I grow up in Oregon?")
-
-    if (question2.toLowerCase() === "yes") {
+    prompt(question[1])
+    if (question[1] === "yes") {
       alert("Correct, I grew up in hillsboro. Very livily city.")
-      num_correct += 1
     }
     else {
       alert("Incorrect, I grew up in oregon.")
     }
-
-    var question3 = prompt("Do I like to play music?")
-
-    if (question3.toLowerCase() === "yes") {
+    prompt(question[2])
+    if (question[2] === "yes") {
       alert("Correct, I like to play music very much.")
-      num_correct += 1
     }
     else {
       alert("Incorrect, I like to play music very much")
     }
-    alert("Thanks, you got " + num_correct + "/3 right!")
-  }
+}
   </script>
 </body>
 </html>
