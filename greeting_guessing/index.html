@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Greeting and Guessing by Alex Anderson</title>
+</head>
+<body>
+  <p style="font-family: open-sans, Helvetica, sans-serif; font-size: 18px;">I'd like to ask you a few question, please.</p>
+  <button style ="width: 200px; height: 100px;"onclick="questionFunction()">CLICK TO ANSWER</button>
+  <script>
+  function questionFunction() {
+
+    var num_correct = 0
+
+    var question1 = prompt("Do I have a dog?")
+
+    if (question1 === "yes") {
+      alert("Correct, I have a dog her name is Ceres.")
+      num_correct += 1
+    }
+    else {
+      alert("Incorrect, I have a dog her name is Ceres. She is now offended.")
+    }
+
+    var question2 = prompt("Did I grow up in Oregon?")
+    if (question2 === "yes") {
+      alert("Correct, I grew up in hillsboro. Very livily city.")
+      num_correct += 1
+    }
+    else {
+      alert("Incorrect, I grew up in oregon.")
+    }
+    alert("")
+
+    var question3 = prompt("Do I like to play music?")
+    if (question3 === "yes") {
+      alert("Correct, I like to play music very much.")
+      num_correct += 1
+    }
+    else {
+      alert("Incorrect, I like to play music very much")
+    }
+    alert("Thanks, you got " + num_correct + "/3 right!")
+  }
+  </script>
+</body>
+</html>
