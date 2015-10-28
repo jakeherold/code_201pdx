@@ -2,50 +2,62 @@
 <html>
 <head>
   <title>Greeting and Guessing by Alex Anderson</title>
+  <style>
+  body {
+    background-color: #658186;
+  }
+  p {
+    font-family: open-sans, Helvetica, sans-serif;
+    font-size: 72px;
+    text-align: center;
+    color: #D2D9C7;
+  }
+  button {
+    width: 50%;
+    height: 100px;
+    align: center;
+    font-size: 30px;
+    background-color: #D2D9C7;
+    color: #658186;
+  }
+  </style>
 </head>
-<body style="background-color: #658186;">
+<body>
   <div>
-    <p style="font-family: open-sans, Helvetica, sans-serif; font-size: 72px; text-align: center; color: #D2D9C7;">HI! WANT TO GET TO KNOW ME?</p>
+    <p>HI! WANT TO GET TO KNOW ME?</p>
+    <div id ="question"></div>
+    <div id ="answer"></div>
+    <div id ="summary"></div>
+    <form>
+    <div class='answers-form'>
+        <lable id='answerLable' for='answerField'>Enter your answer:</lable>
+        <input id='result' type='text' maxlength='25'></input>
+    </div>
+    </form>
     <!-- this button calls the questionFunction bellow onclick-->
-    <button style ="width: 100%; height: 100px; align: center; font-size: 30px; background-color: #D2D9C7; color: #658186;"onclick="questionFunction()">THEN CLICK THIS GIANT BUTTON</button>
+    <button onclick="questionFunction()">NEXT QUESTION!</button>
+    <button onclick="answerFunction()">CLICK TO ANSWER!</button>
   </div>
+
   <script>
 //everything except for the summary alert is contained within the questionFunction which is called with the onclick html button.
-  function questionFunction() {
-//num_correct keeps score of users answers, question var's prompt the user with questions about me
-    var num_correct = 0;
-    var question1 = prompt("Do I have a dog?")
-//.toLowerCase coverts what user enters to lower case and then === compares it to see if answer is correct
-// || or statement covers if a user enters Y/y and compares to see if answer is correct (same for 3 q's below)
-    if ((isNaN(question1))&&(question1.toLowerCase() === "yes")||(question1.toLowerCase() === "y")) {
-      alert("Correct, I have a dog her name is Ceres.")
+function questionFunction() {
+var question = document.getElementById('question').innerHTML = "Does the refrigerator light really turn off when you close the door?"
+}
+function answerFunction() {
+
+var num_correct = 0;
+var result = document.getElementById('result').value;
+
+    if ((result === "yes")||(result === "y")) {
+      document.getElementById('question').innerHTML = "Sure we can be fairly certain about that."
       num_correct += 1
     }
     else {
-      alert("Incorrect, I have a dog her name is Ceres. She is now offended.")
-    }
-
-    var question2 = prompt("Did I grow up in Oregon?")
-
-    if ((question2.toLowerCase() === "yes")||(question2.toLowerCase() === "y")) {
-      alert("Correct, I grew up in hillsboro. Very livily city.")
-      num_correct += 1
-    }
-    else {
-      alert("Incorrect, I grew up in oregon.")
-    }
-
-    var question3 = prompt("Do I like to play music?")
-
-    if ((question3.toLowerCase() === "yes")||(question3.toLowerCase() === "y")) {
-      alert("Correct, I like to play music very much.")
-      num_correct += 1
-    }
-    else {
-      alert("Incorrect, I like to play music very much")
+      document.getElementById('answer').innerHTML = "I guess thats an alright answer."
     }
 //alerts the user with a summary statement telling them how many /3 they got correct
-    alert("Thanks, you got " + num_correct + "/3 right!")
+    document.getElementById('summary').innerHTML = "Thanks, you got " + num_correct + "/3 right!"
   }
   </script>
 </body>
