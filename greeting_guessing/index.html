@@ -24,14 +24,14 @@
 </head>
 <body>
   <div>
-    <p>HI! WANT TO GET TO KNOW ME?</p>
+    <p>HI! QUESTION TIME?</p>
     <div id ="question"></div>
     <div id ="answer"></div>
     <div id ="summary"></div>
     <form>
     <div class='answers-form'>
         <lable id='answerLable' for='answerField'>Enter your answer:</lable>
-        <input id='result' type='text' maxlength='25'></input>
+        <input id='result' type='text' maxlength='4'></input>
     </div>
     </form>
     <!-- this button calls the questionFunction bellow onclick-->
@@ -41,16 +41,22 @@
 
   <script>
 //everything except for the summary alert is contained within the questionFunction which is called with the onclick html button.
-function questionFunction() {
-var question = document.getElementById('question').innerHTML = "Does the refrigerator light really turn off when you close the door?"
+var questions =
+["Does the refrigerator light really turn off when you close the door?",
+"Is shrodinger's cat dead?",
+"Can you cook a steak by dropping it?"];
+var question_num = 0;
+function questionFunction () {
+  document.getElementById('question').innerHTML =  questions[question_num]
+  question_num += 1;
 }
 function answerFunction() {
-
 var num_correct = 0;
 var result = document.getElementById('result').value;
 
     if ((result === "yes")||(result === "y")) {
-      document.getElementById('question').innerHTML = "Sure we can be fairly certain about that."
+      document.getElementById('answer').innerHTML = "Sure we can be fairly certain about that."
+      document.getElementById('question').innerHTML = ""
       num_correct += 1
     }
     else {
