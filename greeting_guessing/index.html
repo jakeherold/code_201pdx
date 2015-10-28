@@ -17,7 +17,7 @@
     var question1 = prompt("Do I have a dog?")
 //.toLowerCase coverts what user enters to lower case and then === compares it to see if answer is correct
 // || or statement covers if a user enters Y/y and compares to see if answer is correct (same for 3 q's below)
-    if ((question1.toLowerCase() === "yes")||(question1.toLowerCase() === "y")) {
+    if ((isNaN(question1))&&(question1.toLowerCase() === "yes")||(question1.toLowerCase() === "y")) {
       alert("Correct, I have a dog her name is Ceres.")
       num_correct += 1
     }
