@@ -6,15 +6,17 @@
 <body style="background-color: #658186;">
   <div>
     <p style="font-family: open-sans, Helvetica, sans-serif; font-size: 72px; text-align: center; color: #D2D9C7;">HI! WANT TO GET TO KNOW ME?</p>
+    <!-- this button calls the questionFunction bellow onclick-->
     <button style ="width: 100%; height: 100px; align: center; font-size: 30px; background-color: #D2D9C7; color: #658186;"onclick="questionFunction()">THEN CLICK THIS GIANT BUTTON</button>
   </div>
   <script>
+//everything except for the summary alert is contained within the questionFunction which is called with the onclick html button.
   function questionFunction() {
-
+//num_correct keeps score of users answers, question var's prompt the user with questions about me
     var num_correct = 0;
-    
     var question1 = prompt("Do I have a dog?")
-
+//.toLowerCase coverts what user enters to lower case and then === compares it to see if answer is correct
+// || or statement covers if a user enters Y/y and compares to see if answer is correct (same for 3 q's below)
     if ((question1.toLowerCase() === "yes")||(question1.toLowerCase() === "y")) {
       alert("Correct, I have a dog her name is Ceres.")
       num_correct += 1
@@ -42,6 +44,7 @@
     else {
       alert("Incorrect, I like to play music very much")
     }
+//alerts the user with a summary statement telling them how many /3 they got correct
     alert("Thanks, you got " + num_correct + "/3 right!")
   }
   </script>
