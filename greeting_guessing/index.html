@@ -13,12 +13,19 @@
     color: #D2D9C7;
   }
   button {
+    display: inline;
     width: 50%;
     height: 100px;
     align: center;
     font-size: 30px;
     background-color: #D2D9C7;
     color: #658186;
+  }
+  #question, #answer, #summary, #answerLable, #result{
+    font-family: open-sans, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #D2D9C7;
   }
   </style>
 </head>
@@ -43,9 +50,10 @@
 //everything except for the summary alert is contained within the questionFunction which is called with the onclick html button.
 var questions =
 ["Does the refrigerator light really turn off when you close the door?",
-"Is shrodinger's cat dead?",
+"Is schrodinger's cat dead?",
 "Can you cook a steak by dropping it?"];
 var question_num = 0;
+
 function questionFunction () {
   document.getElementById('question').innerHTML =  questions[question_num]
   question_num += 1;
