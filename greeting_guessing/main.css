@@ -1,0 +1,39 @@
+body {
+  background-color: #658186;
+}
+p {
+  font-family: open-sans, Helvetica, sans-serif;
+  font-size: 72px;
+  text-align: center;
+  color: #D2D9C7;
+}
+#questionButton {
+  display: inline;
+  float:left;
+  width: 50%;
+  height: 100px;
+  align: center;
+  font-size: 30px;
+  background-color: #D2D9C7;
+  color: #658186;
+}
+#answerButton {
+  display: inline;
+  float:right;
+  width: 50%;
+  height: 100px;
+  align: center;
+  font-size: 30px;
+  background-color: #D2D9C7;
+  color: #658186;
+}
+#question, #answer, #summary, #answerLable, #result{
+  font-family: open-sans, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #D2D9C7;
+}
+.answers-form {
+  width: 60%;
+  padding: 40px;
+}

@@ -2,32 +2,7 @@
 <html>
 <head>
   <title>Greeting and Guessing by Alex Anderson</title>
-  <style>
-  body {
-    background-color: #658186;
-  }
-  p {
-    font-family: open-sans, Helvetica, sans-serif;
-    font-size: 72px;
-    text-align: center;
-    color: #D2D9C7;
-  }
-  button {
-    display: inline;
-    width: 50%;
-    height: 100px;
-    align: center;
-    font-size: 30px;
-    background-color: #D2D9C7;
-    color: #658186;
-  }
-  #question, #answer, #summary, #answerLable, #result{
-    font-family: open-sans, Helvetica, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    color: #D2D9C7;
-  }
-  </style>
+<link rel="stylesheet" type="css" href="main.css">
 </head>
 <body>
   <div>
@@ -37,42 +12,12 @@
     <div id ="summary"></div>
     <form>
     <div class='answers-form'>
-        <lable id='answerLable' for='answerField'>Enter your answer:</lable>
-        <input id='result' type='text' maxlength='4'></input>
+        <lable id='answerLable' class ="lable" for='answerField'>Enter your answer:</lable>
+        <input id='result' class = "result_box" type='text' maxlength='4'></input>
     </div>
     </form>
-    <!-- this button calls the questionFunction bellow onclick-->
-    <button onclick="questionFunction()">NEXT QUESTION!</button>
-    <button onclick="answerFunction()">CLICK TO ANSWER!</button>
+    <button id ="questionButton" onclick="questionFunction()">NEXT QUESTION!</button>
+    <button id ="answerButton" onclick="answerFunction()">CLICK TO ANSWER!</button>
   </div>
-
-  <script>
-//everything except for the summary alert is contained within the questionFunction which is called with the onclick html button.
-var questions =
-["Does the refrigerator light really turn off when you close the door?",
-"Is schrodinger's cat dead?",
-"Can you cook a steak by dropping it?"];
-var question_num = 0;
-
-function questionFunction () {
-  document.getElementById('question').innerHTML =  questions[question_num]
-  question_num += 1;
-}
-function answerFunction() {
-var num_correct = 0;
-var result = document.getElementById('result').value;
-
-    if ((result === "yes")||(result === "y")) {
-      document.getElementById('answer').innerHTML = "Sure we can be fairly certain about that."
-      document.getElementById('question').innerHTML = ""
-      num_correct += 1
-    }
-    else {
-      document.getElementById('answer').innerHTML = "I guess thats an alright answer."
-    }
-//alerts the user with a summary statement telling them how many /3 they got correct
-    document.getElementById('summary').innerHTML = "Thanks, you got " + num_correct + "/3 right!"
-  }
-  </script>
 </body>
 </html>
