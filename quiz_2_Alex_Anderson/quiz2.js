@@ -3,7 +3,7 @@ function funkyFunction(some_num, some_num_2) {
     var sum_num_2 = 20;
     return sum_num * sum_num_2;
     }
-console.log(funkyFunction(4));
+console.log(funkyFunction());
 
 function funkyFunction2(another_num) {
     var another_num = 6;
